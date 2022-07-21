@@ -36,7 +36,7 @@ export default class Server {
   }
 
   private routes(): void {
-    this.app.get('/', new AsteroidsRouter().router)
+    this.app.use('/', new AsteroidsRouter().router)
   }
 
   public start(): void {

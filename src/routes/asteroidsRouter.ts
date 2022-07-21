@@ -1,16 +1,19 @@
 import { Router } from 'express'
+import AsteroidsController from '../controllers/asteroidsController'
 
 export default class AsteroidRouter {
 
   public router: Router
+  private asteroidsController: AsteroidsController
+
   constructor() {
     this.router = Router()
+    this.asteroidsController = new AsteroidsController()
     this.routes()
   }
 
   private routes(): void {
-    this.router.get('/', (req, res) => {
-      return res.status(200).json({ message: 'Inside asteroids router' })
-    })
+    this.router.get('/', this.asteroidsController.listAsteroids)
+    this.router.post('/create/', this.asteroidsController.addAsteroid)
   }
 }
