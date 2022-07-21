@@ -14,6 +14,9 @@ export default class AsteroidRouter {
 
   private routes(): void {
     this.router.get('/', this.asteroidsController.listAsteroids)
+    this.router.get('/:_id/', this.asteroidsController.getAsteroidById)
     this.router.post('/create/', this.asteroidsController.addAsteroid)
+    this.router.patch('/update/:_id/', this.asteroidsController.updateAsteroid)
+    this.router.delete('/delete/:_id/', this.asteroidsController.deleteAsteroid)
   }
 }
