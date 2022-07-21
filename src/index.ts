@@ -1,3 +1,6 @@
 
+import Server from "./server"
 
-console.log("Hello, world!")
+const server = new Server()
+server.start()
+
