@@ -1,5 +1,6 @@
 import Express from 'express'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 import morgan from 'morgan'
 
 dotenv.config({ debug: true })
@@ -20,6 +21,12 @@ export default class Server {
   }
 
   private database(): void {
+    mongoose.connect(process.env.DATABASE_URL_DEV || '')
+    let connection = mongoose.connection
+    connection.on('error', console.error.bind(console, 'connection error:'))
+    connection.once('open', function() {
+      console.log("Database connected")
+    })
   }
 
   private middlewares(): void {
