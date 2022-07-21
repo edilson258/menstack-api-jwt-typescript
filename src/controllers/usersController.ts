@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import bcryptjs from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 import User from '../schemas/user'
 
 export default class UserController {
@@ -20,6 +21,13 @@ export default class UserController {
       password: await bcryptjs.hash(password, await bcryptjs.genSalt())
     })
     
-    return res.status(201).json({ message: 'User created' })
+    const token = jwt.sign(user._id, process.env.JWT_SECRET || 'default', { expiresIn: '30d' }, (err, token) => {
+      if(err) {
+        console.error(err)
+        return null
+      }
+      return token
+    }) 
+    return res.status(201).json({ token })
   }
 }
