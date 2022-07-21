@@ -2,6 +2,7 @@ import Express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import morgan from 'morgan'
+import AsteroidsRouter from './routes/asteroidsRouter'
 
 dotenv.config({ debug: true })
 
@@ -35,9 +36,7 @@ export default class Server {
   }
 
   private routes(): void {
-    this.app.get('/', (req, res) => {
-      res.status(200).json({ message: "API" })
-    })
+    this.app.get('/', new AsteroidsRouter().router)
   }
 
   public start(): void {
