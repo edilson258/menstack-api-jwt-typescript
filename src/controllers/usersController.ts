@@ -40,6 +40,6 @@ export default class UserController {
   }
 }
 
-function signToken(payload: string) {
-  return jwt.sign(payload, process.env.JWT_SECRET || 'default', { expiresIn: '30d' })
+function signToken(_id: string) {
+  return jwt.sign({ _id: _id }, process.env.JWT_SECRET || 'default', { expiresIn: "30d" })
 }

@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import morgan from 'morgan'
 import AsteroidsRouter from './routes/asteroidsRouter'
+import UsersRouter from './routes/usersRouter'
 
 dotenv.config({ debug: true })
 
@@ -37,6 +38,7 @@ export default class Server {
 
   private routes(): void {
     this.app.use('/', new AsteroidsRouter().router)
+    this.app.use('/users/', new UsersRouter().router)
   }
 
   public start(): void {
