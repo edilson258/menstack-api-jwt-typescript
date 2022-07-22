@@ -1,1 +1,1 @@
-# menstack-api-typescript
+# RESTful API using MEN stack 
