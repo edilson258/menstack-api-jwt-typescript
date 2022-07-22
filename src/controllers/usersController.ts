@@ -16,7 +16,8 @@ export default class UserController {
     }
     const user = await User.create({
       username: username,
-      password: await bcryptjs.hash(password, await bcryptjs.genSalt())
+      password: await bcryptjs.hash(password, await bcryptjs.genSalt()),
+      staff: true
     })
     const token = signToken(user._id.toString()) 
     if(token === null) {
