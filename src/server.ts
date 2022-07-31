@@ -23,7 +23,7 @@ export default class Server {
   }
 
   private database(): void {
-    mongoose.connect(process.env.DATABASE_URL_DEV || '')
+    mongoose.connect(process.env.DATABASE_URL || '')
     let connection = mongoose.connection
     connection.on('error', console.error.bind(console, 'connection error:'))
     connection.once('open', function() {
