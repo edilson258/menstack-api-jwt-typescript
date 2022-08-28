@@ -26,13 +26,13 @@ yarn
 
 ## Métodos aceites
 
-Métodos | Acesso aos dados | Previlegios
-------- | ---------------- | -----------
-GET     | LER              | Token valido
-------- | ---------------  | ------------
-POST    | CRIAR            | Admin
-------- | ---------------  | ------------
-PATCH   | EDITAR           | Admin
-------- | ---------------  | ------------
-DELETE  | APAGAR           | Admin
+|Métodos | Acesso aos dados | Previlegios  |
+|------- | ---------------- | -----------  |
+|GET     | LER              | Token valido |
+|        |                  |              |
+|POST    | CRIAR            | Admin        |
+|        |                  |              |
+|PATCH   | EDITAR           | Admin        |
+|        |                  |              |
+|DELETE  | APAGAR           | Admin        |
 
