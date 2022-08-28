@@ -7,6 +7,9 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
+  "engines":{
+    "node": "14.x"
+  },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
