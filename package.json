@@ -7,16 +7,15 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "engines":{
-    "node": "14.x"
+  "engines": {
+    "node": ""
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/dotenv": "^8.2.0",
-    "@types/morgan": "^1.9.3",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.8",
-    "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^18.0.4",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.1",

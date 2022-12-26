@@ -1,6 +1,6 @@
-import Server from "./server"
+import Server from "./Server";
 
-const server = new Server()
-server.start()
+const server = new Server();
+server.start();
 
-export default server
+export default server;
